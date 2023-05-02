@@ -4,15 +4,15 @@ pipeline {
 		stage('Build')	{
 			steps{
 				echo 'Building'
-				go build .
+				sh 'go build .'
 				echo 'Test must print Hello World'
-				./try-jenkins
+				sh './try-jenkins'
 			}
 		}
 		stage('Test')	{
 			steps {
 				echo 'Testing'
-				go test
+				sh 'go test'
 			}
 		}
 	}
